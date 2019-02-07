@@ -13,7 +13,7 @@ char new_line = '\n';
 while (alph <= 'z')
 {
 putchar(alph);
-c++;
+alph++;
 }
 putchar(new_line);
 return (0);
