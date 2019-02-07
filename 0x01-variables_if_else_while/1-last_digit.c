@@ -17,7 +17,7 @@ result = n % 10;
 
 if (result > 5)
 {
-printf("Last digit of %d is %d and is greater than 5", n, last_number);
+printf("Last digit of %d is %d and is greater than 5", n, result);
 }
 
 else if (result == 0)
@@ -27,7 +27,7 @@ printf("Last digit of %d is 0 and is 0", n);
 
 else
 {
-printf("Last digit of %d is %d and is less than 6 and not 0", n, last_number);
+printf("Last digit of %d is %d and is less than 6 and not 0", n, result);
 }
 return (0);
 }
