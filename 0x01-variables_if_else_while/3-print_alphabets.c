@@ -29,4 +29,5 @@ alp_upp++;
 }
 
 putchar(new_line);
+return (0);
 }
