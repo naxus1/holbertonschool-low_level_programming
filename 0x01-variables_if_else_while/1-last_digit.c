@@ -27,7 +27,7 @@ else if (result == 0)
 printf(" is 0\n");
 }
 
-else if (result < 6 && result != 0)
+else
 {
 printf(" is less than 6 and not 0");
 }
