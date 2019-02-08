@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int alp;
+	int num;
+
+	for (alp = '0'; alp <= '9'; alp++)
+	{
+		putchar(alp);
+	}
+	for (num = 'a'; num <= 'f'; num++)
+	{
+		putchar(num);
+	}
+	putchar('\n');
+	return(0);
+}
