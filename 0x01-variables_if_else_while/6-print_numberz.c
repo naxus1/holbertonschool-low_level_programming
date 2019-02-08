@@ -12,7 +12,7 @@ int new_line;
 
 new_line = '\n';
 
-for (num = '1'; num <= '9'; num++)
+for (num = '0'; num <= '9'; num++)
 {
 putchar(num);
 }
