@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
- * main - Entry point
+ * _abs - Entry point
+ * @n: the character to comparate
  *
  * Return: Always 0 (Success)
  */
