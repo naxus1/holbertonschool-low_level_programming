@@ -2,7 +2,7 @@
 
 /**
  * _isalpha - Entry point
- *
+ * @c: Character to comparate
  *
  * Return: Always 1 to 0 (Success)
  */
