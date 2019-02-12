@@ -1,7 +1,9 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * print_sign - program that return the state of number
+ *
+ * @n: Integer to comparate
  *
  * Return: Always 0 (Success)
  */
@@ -29,5 +31,5 @@ int print_sign(int n)
 		_putchar('-');
 	}
 
-	return(sign);
+	return (sign);
 }
