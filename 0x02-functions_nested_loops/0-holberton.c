@@ -3,7 +3,7 @@
 
 /**
  * _putchar - writes the character c to stdout
- * @c: The character to print
+ * @c: print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -11,7 +11,7 @@
 
 int _putchar (char);
 
-int main (void)
+int main(void)
 {
 	_putchar('H');
 	_putchar('o');
