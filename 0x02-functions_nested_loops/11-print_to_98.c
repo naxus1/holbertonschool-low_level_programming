@@ -3,6 +3,7 @@
 /**
  * print_to_98 - Entry point
  *
+ * @n: Character
  * Return: Always 0 (Success)
  */
 
@@ -16,7 +17,7 @@ void print_to_98(int n)
 		{
 			printf("%d", iterator);
 
-			if(iterator != 98)
+			if (iterator != 98)
 			{
 				printf(",");
 				printf(" ");
@@ -36,8 +37,6 @@ void print_to_98(int n)
 				printf(" ");
 			}
 		}
-
-		
 	}
 
 	printf("\n");
