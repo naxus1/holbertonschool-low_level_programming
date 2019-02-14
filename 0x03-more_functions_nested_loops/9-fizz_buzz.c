@@ -23,7 +23,12 @@ int main(void)
 
 		else if (iterator % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+
+			if (iterator !=100)
+			{
+				printf(" ");
+			}
 		}
 
 		else
