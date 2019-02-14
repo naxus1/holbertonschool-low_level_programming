@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void)
+{
+
+	int iterator;
+
+	for (iterator = 0; iterator < 100; iterator++)
+	{
+	       if((iterator % 3 == 0) && (iterator % 5 == 0))
+		{
+			printf("FizzBuzz");
+		}
+
+		printf("%d", iterator);
+	}
+
+	return(0);
+}
