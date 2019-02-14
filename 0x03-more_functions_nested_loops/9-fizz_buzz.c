@@ -25,7 +25,7 @@ int main(void)
 		{
 			printf("Buzz");
 
-			if (iterator !=100)
+			if (iterator != 100)
 			{
 				printf(" ");
 			}
