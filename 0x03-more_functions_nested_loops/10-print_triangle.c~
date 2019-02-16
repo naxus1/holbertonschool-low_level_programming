@@ -1,0 +1,11 @@
+#include "holberton.h"
+
+void print_triangle(int size)
+{
+	int ite1;
+
+	for(ite = 0; ite <2; ite++)
+	{
+		putchar('#');
+	}
+}
