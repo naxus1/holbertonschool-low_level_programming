@@ -1,5 +1,9 @@
 #include "holberton.h"
-#include <stdio.h>
+/**
+ * puts2 - Entry point
+ *@str: pointer of reference
+ * Return: Always 0 (Success)
+ */
 
 void puts2(char *str)
 {
@@ -19,7 +23,7 @@ void puts2(char *str)
 	}
 
 
-	for (i = 0; i < contador; i+=2)
+	for (i = 0; i < contador; i += 2)
 	{
 		_putchar(*(str + i));
 	}
