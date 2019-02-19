@@ -1,9 +1,8 @@
 #include "holberton.h"
 #include <stdio.h>
 
-void print_rev(char *s)
+void puts2(char *str)
 {
-
 	int i, crash, contador;
 
 	crash = 1;
@@ -11,7 +10,7 @@ void print_rev(char *s)
 
 	while (crash)
 	{
-		if (*(s + contador) != '\0')
+		if (*(str + contador) != '\0')
 		{
 			contador++;
 		}
@@ -20,9 +19,10 @@ void print_rev(char *s)
 	}
 
 
-	for (i = 0; i <= contador; i++)
+	for (i = 0; i < contador; i+=2)
 	{
-		_putchar(*(s + i));
+		_putchar(*(str + i));
 	}
 
+	_putchar('\n');
 }

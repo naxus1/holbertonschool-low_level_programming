@@ -1,15 +1,16 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
- * print_rev - Entry point
+ * rev_string - Entry point
  * @s: Pointer to comparate
- * Return: Always 0 (Success)
+ * Return: Albways 0 (Success)
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
 
 	int i, crash, contador;
-
+	char rev[10];
 	crash = 1;
 	contador = 0;
 
@@ -24,10 +25,9 @@ void print_rev(char *s)
 	}
 
 
-	for (i = contador - 1; i >= 0; i--)
+	for (i = contador; i >= 0; i--)
 	{
-		_putchar(*(s + i));
+		rev[i] = *(s + i);
+		_putchar(rev[i]);
 	}
-
-	_putchar('\n');
 }
