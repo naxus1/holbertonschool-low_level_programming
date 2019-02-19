@@ -1,5 +1,9 @@
 #include "holberton.h"
-#include <stdio.h>
+/**
+ * print_rev - Entry point
+ * @s: Pointer to comparate
+ * Return: Always 0 (Success)
+ */
 
 void print_rev(char *s)
 {
