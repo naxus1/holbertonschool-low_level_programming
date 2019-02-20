@@ -9,7 +9,7 @@
 void rev_string(char *s)
 {
 
-	int i, j, crash, contador;
+	int i, j, crash, aux, contador;
 
 	crash = 1;
 	contador = 0;
@@ -25,13 +25,19 @@ void rev_string(char *s)
 			crash = 0;
 	}
 
-	char a[contador]={0};
+	j = contador;
+	i = 0;
+	printf("%d", contador);
 
-	for (i = contador; i >= 0; i--)
+	while (i != j)
 	{
-		a[j] = s[i];
-		j++;
+		aux = *(s + i);
+		*(s + i) = *(s + j);
+		*(s + j) = aux;
+		i++;
+		j--;
 	}
 
+	*s = contador;
 
 }
