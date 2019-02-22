@@ -2,7 +2,7 @@
 /**
  * _strcat - Entry point
  *@dest: pointer
- *@char: pointer to copy
+ *@src: pointer to copy
  * Return: Always 0 (Success)
  */
 char *_strcat(char *dest, char *src)
