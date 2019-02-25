@@ -22,11 +22,11 @@ char *_strpbrk(char *s, char *accept)
 		}
 	}
 
-	if(crash == 0)
+	if (crash == 0)
 	{
 		return (0);
 	}
 
 	else
-		return ((s + i)-1);
+		return ((s + i) - 1);
 }
