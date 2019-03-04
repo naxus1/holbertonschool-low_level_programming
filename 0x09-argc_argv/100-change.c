@@ -17,33 +17,39 @@ int main(int argc, char *argv[])
 	if (argc == 1)
 	{
 		printf("Error\n");
+		return (1);
 	}
 	else
 	{
 		n = atoi(argv[1]);
-		for (i = 0; i < 5; i++)
+
+		if(n > 0)
 		{
-			flag = 0;
-
-			if (arr[i] <= n && flag == 0)
+			for (i = 0; i < 5; i++)
 			{
-				flag2 = 0;
+				flag = 0;
 
-				while (sum <= n && flag2 == 0)
+				if (arr[i] <= n && flag == 0)
 				{
-					if ((sum + arr[i]) <= n)
-					{
-						sum += arr[i];
-						cont++;
-					}
-					else
-						flag2 = 1;
-				}
-				flag = 1;
-			}
-		}
-		printf("%d\n", cont);
-	}
+					flag2 = 0;
 
+					while (sum <= n && flag2 == 0)
+					{
+						if ((sum + arr[i]) <= n)
+						{
+							sum += arr[i];
+							cont++;
+						}
+						else
+							flag2 = 1;
+					}
+					flag = 1;
+				}
+			}
+			printf("%d\n", cont);
+		}
+		else
+			printf("%d\n", 0);
+	}
 	return (0);
 }
