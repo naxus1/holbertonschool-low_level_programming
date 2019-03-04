@@ -6,44 +6,44 @@
  * @argv: pointer of arguments of input
  * Return: Always 0 (Success)
  */
-int main(int strc, char *strv[])
+int main(int argc, char *argv[])
 {
-	int sum = 0, i, n;
-	int cont = 0, flag, flag2;
+	int sum, i, n, cont, flag, flag2;
 	int arr[5] = {25, 10, 5, 2, 1};
 
-	if (strc == 1)
+	sum = 0;
+	cont = 0;
+
+	if (argc == 1)
+	{
 		printf("Error\n");
+	}
 	else
 	{
-		n = atoi(strv[1]);
-		if (n < 0)
-			printf("0\n");
-		else
+		n = atoi(argv[1]);
+		for (i = 0; i < 5; i++)
 		{
-			for (i = 0; i < 5; i++)
+			flag = 0;
+
+			if (arr[i] <= n && flag == 0)
 			{
-				flag = 0;
-				if (arr[i] <= n && flag == 0)
+				flag2 = 0;
+
+				while (sum <= n && flag2 == 0)
 				{
-					flag2 = 0;
-					while (sum <= n && flag2 == 0)
+					if ((sum + arr[i]) <= n)
 					{
-						if (sum + arr[i] <= n)
-						{
-							sum += arr[i];
-							cont++;
-						}
-						else
-						{
-							flag2 = 1;
-						}
+						sum += arr[i];
+						cont++;
 					}
-					flag = 1;
+					else
+						flag2 = 1;
 				}
+				flag = 1;
 			}
-			printf("%d", cont);
 		}
+		printf("%d\n", cont);
 	}
+
 	return (0);
 }
