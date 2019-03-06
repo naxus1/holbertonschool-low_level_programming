@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _strdup - Entry point
  * @str:String to process
@@ -27,6 +28,7 @@ char *_strdup(char *str)
 	{
 		pointer_ptr[i] = str[i];
 	}
+	pointer_ptr[i] = '\0';
 
 	return (pointer_ptr);
 }
