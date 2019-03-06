@@ -9,10 +9,17 @@
 
 char *create_array(unsigned int size, char c)
 {
-	char *myarray = malloc(sizeof(c) * size);
+	char *myarray;
 	unsigned int iterator;
 
 	if (size == 0)
+	{
+		return (NULL);
+	}
+
+	myarray = (char*) malloc(sizeof(c) * size);
+
+	if(myarray == NULL)
 	{
 		return (NULL);
 	}
