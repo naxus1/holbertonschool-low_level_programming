@@ -4,7 +4,7 @@
  * create_array - Entry point
  * @size: Size of pointer
  * @c: Char to input
- * Return: Always 0 (Success)
+ * Return: Pointer
  */
 
 char *create_array(unsigned int size, char c)

@@ -3,7 +3,7 @@
 /**
  * _strdup - Entry point
  * @str:String to process
- * Return: Always 0 (Success)
+ * Return: Pointer 0 (Success)
  */
 
 char *_strdup(char *str)
@@ -22,7 +22,7 @@ char *_strdup(char *str)
 	if (pointer_ptr == NULL)
 		return (NULL);
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size + 1; i++)
 	{
 		pointer_ptr[i] = str[i];
 	}
