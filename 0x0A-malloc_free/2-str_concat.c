@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 
 	size = i + j + 1;
 
-	myarray = (char *) malloc(sizeof(s1) * size);
+	myarray = (char *) malloc(sizeof(char) * size);
 
 	if (myarray == NULL)
 		return (NULL);
@@ -34,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 
 	for (j = 0; s2[j] != '\0'; j++, i++)
 		myarray[i] = s2[j];
-
+ 
 	myarray[i] = '\0';
 
 	return (myarray);
