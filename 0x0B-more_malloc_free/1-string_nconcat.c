@@ -12,9 +12,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *new_array;
 	unsigned int j, i, ite;
 
+	if(s1 == NULL)
+		s1 = "";
+	if(s2 == NULL)
+		s2 = "";
 	for (i = 0; s1[i] != '\0'; i++)
 	{}
-
 	for (j = 0; s2[j] != '\0'; j++)
 	{}
 
@@ -25,7 +28,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (new_array == NULL)
 		return (NULL);
-
 	for (ite = 0; ite < i; ite++)
 		new_array[ite] = s1[ite];
 
@@ -33,6 +35,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		new_array[i] = s2[ite];
 
 	new_array[i] = '\0';
-
 	return (new_array);
 }
