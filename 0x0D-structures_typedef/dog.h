@@ -1,4 +1,4 @@
-# ifndef  _DOG_H_
+# ifndef _DOG_H_
 # define  _DOG_H_
 
 /**
@@ -9,10 +9,10 @@
  */
 
 typedef struct dog
- {
+{
 	 char *name;
 	 double age;
 	 char *owner;
- } my_dog;
+} my_dog;
 
 #endif
