@@ -3,10 +3,10 @@
 #include <stdarg.h>
 
 /**
- * print_strings - Entry point
+ * print_strings - entry point
  * @separator: separator of string
  * @n: number of arguments
- * Return: Always 0 (Success)
+ * Return: void
  */
 
 void print_strings(const char *separator, const unsigned int n, ...)
@@ -15,29 +15,22 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *word;
 
-	if (separator == NULL)
-		return;
-
 	va_start(lista, n);
 
 	for (i = 0; i < n; i++)
 	{
 		word = va_arg(lista, char *);
 
-		if (i < (n - 1))
-		{
-			if (word == NULL)
-				printf("(nil)%s", separator);
-
-			else
-				printf("%s%s", word, separator);
-		}
+		if (word == NULL)
+			printf("(nil)");
 
 		else
 			printf("%s", word);
+
+		if (separator != NULL && i + 1 != n)
+			printf("%s", separator);
 	}
 
 	printf("\n");
 	va_end(lista);
-
 }
