@@ -15,10 +15,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *word;
 
-	va_start(lista, n);
-
 	if (separator == NULL)
 		return;
+
+	va_start(lista, n);
 
 	for (i = 0; i < n; i++)
 	{
@@ -37,6 +37,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", word);
 	}
 
-	va_end(lista);
 	printf("\n");
+	va_end(lista);
+
 }
