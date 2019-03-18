@@ -1,16 +1,13 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
 /**
  * myp_char - Print character
  * @lista:char to print
  * @sep: Separator
  * Return: Always 0 (Success)
  */
-void myp_char(va_list lista, char *sep)
+void myp_char(va_list lista)
 {
-	printf("%c%s", va_arg(lista, int), sep);
+	printf("%c", va_arg(lista, int));
 }
 
 /**
@@ -19,9 +16,9 @@ void myp_char(va_list lista, char *sep)
  * @sep: Separator
  * Return: Print integer
  */
-void print_int(va_list lista, char *sep)
+void print_int(va_list lista)
 {
-	printf("%d%s", va_arg(lista, int), sep);
+	printf("%d", va_arg(lista, int));
 }
 
 /**
@@ -30,9 +27,9 @@ void print_int(va_list lista, char *sep)
  * @sep: Separator
  * Return: Print float
  */
-void print_float(va_list lista, char *sep)
+void print_float(va_list lista)
 {
-	printf("%f%s", (va_arg(lista, double)), sep);
+	printf("%f", (va_arg(lista, double)));
 }
 
 /**
@@ -41,7 +38,7 @@ void print_float(va_list lista, char *sep)
  * @sep: Separator
  * Return: Print string
  */
-void print_array(va_list lista, char *sep)
+void print_array(va_list lista)
 {
 	char *p;
 
@@ -52,7 +49,7 @@ void print_array(va_list lista, char *sep)
 		printf("(nil)");
 	}
 	else
-		printf("%s%s", p, sep);
+		printf("%s", p);
 }
 
 
@@ -60,7 +57,7 @@ void print_array(va_list lista, char *sep)
  * print_all - Entry point
  * @format:is a list of types of arguments passed to the function
  *
- * Return: Always 0 (Success)
+ * Re
  */
 
 void print_all(const char * const format, ...)
@@ -76,7 +73,7 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(lista, format);
-	p = ", ";
+	p = "";
 
 	while (format[i] != '\0')
 	{
@@ -85,11 +82,15 @@ void print_all(const char * const format, ...)
 		{
 			if (my_array[j].my_character == format[i])
 			{
-				my_array[j].my_print(lista, p);
+				printf("%s", p);
+				my_array[j].my_print(lista);
+				p = ", ";
+				j = 4;
 			}
 			j++;
 		}
 		i++;
 	}
 	printf("\n");
+	va_end(lista);
 }
