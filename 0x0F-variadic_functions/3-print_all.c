@@ -16,16 +16,16 @@ void print_all(const char * const format, ...)
 	va_start(lista, format);
 	while (format[i] != '\0')
 	{
-		switch (format[i])
+		switch (format[i++])
 		{
 		case 'c':
-			printf("%s%c", p, va_arg(lista, int));
+			printf("%c", va_arg(lista, char));
 			break;
 		case 'i':
-			printf("%s%d", p, va_arg(lista, int));
+			printf("%d", va_arg(lista, int));
 			break;
 		case 'f':
-			printf("%s%f", p, va_arg(lista, double));
+			printf("%f", va_arg(lista, double));
 			break;
 		case 's':
 			word = va_arg(lista, char *);
@@ -33,15 +33,13 @@ void print_all(const char * const format, ...)
 			{
 				word = "(nil)";
 			}
-			printf("%s%s", p, word);
+			printf("%s", word);
 			break;
 		default:
-			i++;
 			continue;
 		}
-		p = ", ";
-		i++;
+	        if (format[i])
+			printf(", ");
 	}
 	printf("\n");
-	va_end(lista);
 }
