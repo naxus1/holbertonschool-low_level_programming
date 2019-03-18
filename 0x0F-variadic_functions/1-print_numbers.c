@@ -1,9 +1,9 @@
 #include "variadic_functions.h"
+#include <stdio.h>
  /**
- * print_numbers - Entry point
- * @separator: Separator of string
+ * print_numbers - print numbers
+ * @separator: separator of string
  * @n: number of  argumentst
- * Return: Always 0 (Success)
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -17,7 +17,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		printf("%d", va_arg(lista, int));
 
-		if (i != n - 1 && separator != NULL)
+		if (i != n - 1 && separator)
 		{
 			printf("%s", separator);
 		}
