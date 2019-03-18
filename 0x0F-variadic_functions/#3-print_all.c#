@@ -85,9 +85,7 @@ void print_all(const char * const format, ...)
 			if (my_array[j].my_character == format[i])
 			{
 			       	my_array[j].my_print(lista, p);
-		       
 			}
-
 			j++;
 		}
 		i++;
