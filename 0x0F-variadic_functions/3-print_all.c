@@ -2,7 +2,7 @@
 /**
  * myp_char - Print character
  * @lista:char to print
- * @sep: Separator
+ *
  * Return: Always 0 (Success)
  */
 void myp_char(va_list lista)
@@ -13,7 +13,7 @@ void myp_char(va_list lista)
 /**
  * print_int - Print integer
  * @lista: integer to print
- * @sep: Separator
+ *
  * Return: Print integer
  */
 void print_int(va_list lista)
@@ -24,7 +24,7 @@ void print_int(va_list lista)
 /**
  * print_float - Print float
  * @lista: Float to print
- * @sep: Separator
+ *
  * Return: Print float
  */
 void print_float(va_list lista)
@@ -35,7 +35,7 @@ void print_float(va_list lista)
 /**
  * print_array - Print strig
  * @lista: string to print
- * @sep: Separator
+ *
  * Return: Print string
  */
 void print_array(va_list lista)
