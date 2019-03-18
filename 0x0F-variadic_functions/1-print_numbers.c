@@ -1,7 +1,5 @@
 #include "variadic_functions.h"
-#include <stdio.h>
-#include <stdarg.h>
-/**
+ /**
  * print_numbers - Entry point
  * @separator: Separator of string
  * @n: number of  argumentst

@@ -19,13 +19,13 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 		case 'c':
-			printf("%c", va_arg(lista, char));
+			printf("%s%c", p, va_arg(lista, int));
 			break;
 		case 'i':
-			printf("%d", va_arg(lista, int));
+			printf("%s%d", p, va_arg(lista, int));
 			break;
 		case 'f':
-			printf("%f", va_arg(lista, double));
+			printf("%s%f", p, va_arg(lista, double));
 			break;
 		case 's':
 			word = va_arg(lista, char *);
@@ -33,14 +33,14 @@ void print_all(const char * const format, ...)
 			{
 				word = "(nil)";
 			}
-			printf("%s", word);
+			printf("%s%s", p, word);
 			break;
 		default:
 			i++;
 			continue;
 		}
 		p = ", ";
-		i++
+		i++;
 	}
 	printf("\n");
 }
