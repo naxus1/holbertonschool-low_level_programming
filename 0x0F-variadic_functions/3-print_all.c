@@ -62,7 +62,6 @@ void print_all(const char * const format, ...)
 		{'i', print_int},
 		{'f', print_float},
 		{'s', print_array},
-		{NULL, NULL}
 	};
 
 	va_start(lista, format);
@@ -78,7 +77,6 @@ void print_all(const char * const format, ...)
 				printf("%s", p);
 				my_array[j].my_print(lista);
 				p = ", ";
-				j = 4;
 			}
 			j++;
 		}
