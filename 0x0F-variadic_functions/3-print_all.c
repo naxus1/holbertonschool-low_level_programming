@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * p_char - Print character
+ * myp_char - Print character
  * @lista:char to print
  * @sep: Separator
  * Return: Always 0 (Success)
