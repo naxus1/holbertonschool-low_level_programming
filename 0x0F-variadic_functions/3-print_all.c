@@ -44,6 +44,7 @@ void print_float(va_list lista, char *sep)
 void print_array(va_list lista, char *sep)
 {
 	char *p;
+
 	p = va_arg(lista, char *);
 
 	if (p == NULL)
@@ -84,10 +85,8 @@ void print_all(const char * const format, ...)
 		{
 			if (my_array[j].my_character == format[i])
 			{
-			       	my_array[j].my_print(lista, p);
-		       
+				my_array[j].my_print(lista, p);
 			}
-
 			j++;
 		}
 		i++;
