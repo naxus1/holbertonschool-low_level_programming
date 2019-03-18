@@ -8,11 +8,12 @@ void print_all(const char * const format, ...)
 {
 	va_list lista;
 	char *p, *word;
+	int i;
 
 	p = "";
-	int i = 0;
+	i = 0;
 
-	va_start(list, format);
+	va_start(lista, format);
 	while (format[i] != '\0')
 	{
 		switch (format[i])
@@ -28,9 +29,9 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			word = va_arg(lista, char *);
-			if (str == NULL)
+			if (word == NULL)
 			{
-				str = "(nil)";
+				word = "(nil)";
 			}
 			printf("%s%s", p, word);
 			break;
@@ -42,5 +43,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-	va_end(list);
+	va_end(lista);
 }
