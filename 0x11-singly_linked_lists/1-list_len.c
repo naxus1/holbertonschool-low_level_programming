@@ -7,7 +7,7 @@
 size_t list_len(const list_t *h)
 {
 	const list_t *aux = h;
-	size_t cont;
+	size_t cont = 0;
 
 
 	if (aux != NULL)
