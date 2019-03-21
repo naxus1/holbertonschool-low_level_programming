@@ -10,13 +10,14 @@ size_t list_len(const list_t *h)
 	size_t cont;
 
 
-	if(aux != NULL)
+	if (aux != NULL)
 	{
-		while(aux != NULL)
+		while (aux != NULL)
 		{
 			aux = aux->next;
 			cont++;
 		}
 	}
-        return (cont);
+
+	return (cont);
 }
