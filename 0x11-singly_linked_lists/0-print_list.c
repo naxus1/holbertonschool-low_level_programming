@@ -13,14 +13,13 @@ size_t print_list(const list_t *h)
 	aux = h;
 	cont = 0;
 
-	if(aux != NULL)
+	if (aux != NULL)
 	{
 		while (aux != NULL)
 		{
 			if (aux->str == NULL)
 			{
-				printf("[0]");
-				printf("(nil)\n");
+				printf("[%d] (nil)\n", aux->len);
 				cont++;
 			}
 			else
@@ -32,5 +31,4 @@ size_t print_list(const list_t *h)
 		}
 	}
 	return (cont);
-
 }
