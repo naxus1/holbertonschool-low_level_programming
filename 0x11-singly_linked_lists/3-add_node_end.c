@@ -11,19 +11,20 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new, *nodo_ptr;
+
 	new = malloc(sizeof(list_t));
 
 	if (new_node == NULL)
 		return (NULL);
 
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		*head = new;
 	}
 	else
 	{
 		nodo_ptr = *head;
-		while(nodo_ptr->next != NULL)
+		while (nodo_ptr->next != NULL)
 		{
 			nodo_ptr = nodo_ptr->next;
 		}
@@ -40,13 +41,11 @@ list_t *add_node_end(list_t **head, const char *str)
  * @string: string.
  * Return: integer.
  */
-
 int _strlen(const char *string)
 {
-        int i;
+	int i;
 
-        for (i = 0; string[i] != '\0'; i++)
-        {}
-
-        return (i);
+	for (i = 0; string[i] != '\0'; i++)
+	{}
+	return (i);
 }
