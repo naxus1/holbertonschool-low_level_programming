@@ -22,27 +22,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bufferRead = malloc(sizeof(char) * letters);
 	if (bufferRead == NULL)
 	{
-		close(fileDescOpen);
 		free(bufferRead);
 		return (0);
 	}
 
 	fileDescRead = read(fileDescOpen, bufferRead, letters);
-	close(fileDescOpen);
 
 	if (fileDescRead == -1)
-	{
-		free(bufferRead);
 		return (0);
-	}
 
 	fileDescWrite = write(STDOUT_FILENO, bufferRead, fileDescRead);
 
 	if (fileDescWrite == -1)
-	{
-		free(bufferRead);
 		return (0);
-	}
 
 	free(bufferRead);
 	return (fileDescWrite);
