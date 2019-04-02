@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fileDescOpen = open(filename, O_RDWR);
 
-	if (fileDescOpen < 0)
+	if (fileDescOpen == -1)
 	{
 		close(fileDescOpen);
 		return (0);
@@ -43,7 +43,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fileDescWrite = write(STDOUT_FILENO, bufferRead, letters);
 
-	if (fileDescWrite <= 0)
+	if (fileDescWrite < 0)
 	{
 		free(bufferRead);
 		return (0);
