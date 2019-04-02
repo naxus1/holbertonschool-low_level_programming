@@ -33,10 +33,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	fileDescRead = read(fileDescOpen, bufferRead, letters);
+	close(fileDescOpen);
 
 	if (fileDescRead < 0)
 	{
-		close(fileDescOpen);
 		free(bufferRead);
 		return (0);
 	}
