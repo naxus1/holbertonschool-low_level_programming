@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include "holberton.h"
 /**
  * read_textfile - reads a text file
@@ -18,20 +14,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!filename || letters == 0)
 		return (0);
 
-	fileDescOpen = open(filename, O_RDWR);
+	fileDescOpen = open(filename, O_RDONLY);
 
 	if (fileDescOpen == -1)
-	{
-		close(fileDescOpen);
 		return (0);
-	}
 
-	bufferRead = calloc(letters, sizeof(char));
+	bufferRead = malloc( sizeof(char) * letters);
 	if (bufferRead == NULL)
 	{
 		close(fileDescOpen);
 		return (0);
 	}
+
 	fileDescRead = read(fileDescOpen, bufferRead, letters);
 	close(fileDescOpen);
 
@@ -41,14 +35,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	fileDescWrite = write(STDOUT_FILENO, bufferRead, letters);
+	fileDescWrite = write(STDOUT_FILENO, bufferRead, fileDescRead);
 
-	if (fileDescWrite < 0)
+	if (fileDescWrite <= 0)
 	{
 		free(bufferRead);
 		return (0);
 	}
 
 	free(bufferRead);
-	return (fileDescRead);
+	return (fileDescWrite);
 }
