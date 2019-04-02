@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fileDescOpen == -1)
 		return (0);
 
-	bufferRead = malloc( sizeof(char) * letters);
+	bufferRead = malloc(sizeof(char) * letters);
 	if (bufferRead == NULL)
 	{
 		close(fileDescOpen);
