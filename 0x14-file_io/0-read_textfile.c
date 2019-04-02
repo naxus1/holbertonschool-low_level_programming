@@ -11,7 +11,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fileDescOpen, fileDescRead, fileDescWrite;
 	char *bufferRead;
 
-	if (!filename || letters == 0)
+	if (filename == NULL || letters == 0)
 		return (0);
 
 	fileDescOpen = open(filename, O_RDONLY);
@@ -23,13 +23,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (bufferRead == NULL)
 	{
 		close(fileDescOpen);
+		free(bufferRead);
 		return (0);
 	}
 
 	fileDescRead = read(fileDescOpen, bufferRead, letters);
 	close(fileDescOpen);
 
-	if (fileDescRead < 0)
+	if (fileDescRead == -1)
 	{
 		free(bufferRead);
 		return (0);
@@ -37,7 +38,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fileDescWrite = write(STDOUT_FILENO, bufferRead, fileDescRead);
 
-	if (fileDescWrite <= 0)
+	if (fileDescWrite == -1)
 	{
 		free(bufferRead);
 		return (0);
