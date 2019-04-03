@@ -1,58 +1,33 @@
 #include "holberton.h"
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int amountLetters(char *s);
 
 /**
- * create_file - create a file
- * @filename: name file
- * @text_content: content of the file
+ * create_file - creates a file.
+ * @filename: name of the file to create
+ * @text_content: NULL terminated string to write to the file
+ *
  * Return: 1 on success, -1 on failure
  */
+
 int create_file(const char *filename, char *text_content)
 {
-	int descFileOpen, descFileWrite, letters = 0;
+	int fd, letters = 0, conf;
 
+/* write */
 	if (filename == NULL)
 		return (-1);
 
-	descFileOpen = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 00600);
-	if (descFileOpen == -1)
-	{
-		return (-1);
-	}
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-	if (text_content != NULL)
+	if (fd == -1)
+		return (-1);
+	if (text_content == NULL)
 		text_content = "";
-
-	letters = amountLetters(text_content);
-
-	descFileWrite = write(descFileOpen, text_content, letters);
-	if (descFileWrite == -1)
-	{
-		close(descFileOpen);
+	for (; text_content[letters] != '\0'; letters++)
+		;
+	conf = write(fd, text_content, letters);
+	if (conf == -1)
 		return (-1);
-	}
+	close(fd);
 
-	close(descFileOpen);
 	return (1);
-}
-/**
- * amountLetters - count the character of an string
- * @words: string for counter
- * Return: numbers of letters in the string
- */
-
-int amountLetters(char *words)
-{
-	int i;
-
-	for (i = 0; words[i] != '\0'; i++)
-	{}
-
-	return (i);
 }
