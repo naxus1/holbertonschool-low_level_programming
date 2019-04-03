@@ -11,36 +11,40 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fileDescOpen, fileDescRead, fileDescWrite;
 	char *bufferRead;
 
-	if (filename == NULL)
+	if (!filename || letters == 0)
 		return (0);
 
-	fileDescOpen = open(filename, O_RDONLY);
+	fileDescOpen = open(filename, O_RDWR);
 
 	if (fileDescOpen == -1)
-		return (0);
-
-	bufferRead = malloc(sizeof(char) * letters);
-	if (bufferRead == NULL)
 	{
 		close(fileDescOpen);
-		free(bufferRead);
 		return (0);
 	}
 
+	bufferRead = calloc(letters, sizeof(char));
+	if (bufferRead == NULL)
+	{
+		close(fileDescOpen);
+		return (0);
+	}
 	fileDescRead = read(fileDescOpen, bufferRead, letters);
 
 	if (fileDescRead == -1)
 	{
-		free(bufferRead);
 		close(fileDescOpen);
+		free(bufferRead);
 		return (0);
 	}
 
-	fileDescWrite = write(STDOUT_FILENO, bufferRead, fileDescRead);
+	fileDescWrite = write(STDOUT_FILENO, bufferRead, letters);
 
 	if (fileDescWrite == -1)
+	{
+		free(bufferRead);
 		return (0);
+	}
 
 	free(bufferRead);
-	return (fileDescWrite);
+	return (fileDescRead);
 }
