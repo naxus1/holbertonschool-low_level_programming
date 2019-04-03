@@ -10,7 +10,7 @@ int amountLetters(char *words);
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int descFileOpen, descFileWrite;
+	int descFileOpen, descFileWrite, letters = 0;
 
 	if (filename == NULL)
 		return (-1);
