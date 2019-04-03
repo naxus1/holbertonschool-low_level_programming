@@ -1,50 +1,43 @@
-#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
 /**
- * read_textfile - reads a text file
- * @filename: name file
+ * read_textfile - reads a text file and prints it to standard out
+ * @filename: name of file
  * @letters: how many letters to read and print
  * Return: 0 if error, otherwise number letters printed
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fileDescOpen, fileDescRead, fileDescWrite;
-	char *bufferRead;
+	int fi, re, wr;
+	char *buf;
 
 	if (!filename || letters == 0)
 		return (0);
-
-	fileDescOpen = open(filename, O_RDWR);
-
-	if (fileDescOpen == -1)
+	fi = open(filename, O_RDONLY);
+	if (fi < 0)
+		return (0);
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
 	{
-		close(fileDescOpen);
+		close(fi);
 		return (0);
 	}
-
-	bufferRead = calloc(letters, sizeof(char));
-	if (bufferRead == NULL)
+	re = read(fi, buf, letters);
+	close(fi);
+	if (re < 0)
 	{
-		close(fileDescOpen);
+		free(buf);
 		return (0);
 	}
-	fileDescRead = read(fileDescOpen, bufferRead, letters);
-
-	if (fileDescRead == -1)
+	wr = write(STDOUT_FILENO, buf, re);
+	if (wr <= 0)
 	{
-		close(fileDescOpen);
-		free(bufferRead);
+		free(buf);
 		return (0);
 	}
-
-	fileDescWrite = write(STDOUT_FILENO, bufferRead, fileDescRead);
-
-	if (fileDescWrite == -1)
-	{
-		free(bufferRead);
-		return (0);
-	}
-
-	free(bufferRead);
-	return (fileDescWrite);
+	free(buf);
+	return (wr);
 }
