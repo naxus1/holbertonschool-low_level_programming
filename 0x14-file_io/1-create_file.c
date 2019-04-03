@@ -1,4 +1,12 @@
 #include "holberton.h"
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int amountLetters(char *s);
+
 /**
  * create_file - create a file
  * @filename: name file
