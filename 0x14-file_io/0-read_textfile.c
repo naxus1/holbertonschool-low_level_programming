@@ -37,7 +37,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	fileDescWrite = write(STDOUT_FILENO, bufferRead, letters);
+	fileDescWrite = write(STDOUT_FILENO, bufferRead, fileDescRead);
 
 	if (fileDescWrite == -1)
 	{
@@ -46,5 +46,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	free(bufferRead);
-	return (fileDescRead);
+	return (fileDescWrite);
 }
