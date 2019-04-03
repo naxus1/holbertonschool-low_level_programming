@@ -12,7 +12,7 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	descFileOpen = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	descFileOpen = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 00600);
 	if (descFileOpen == -1)
 	{
 		return (-1);
@@ -26,6 +26,7 @@ int create_file(const char *filename, char *text_content)
 	descFileWrite = write(descFileOpen, text_content, letters);
 	if (descFileWrite == -1)
 	{
+		close(descFileOpen);
 		return (-1);
 	}
 
