@@ -1,4 +1,5 @@
 #include "holberton.h"
+int amountLetters(char *words);
 /**
  * create_file - create a file
  * @filename: name file
