@@ -1,50 +1,38 @@
 #include "holberton.h"
-
+/**
+ * times_table - print tables
+ */
 void times_table(void)
 {
-	int rep, num, result, rest2;
+	int i, j, sum, k, l;
 
-	for(rep = 0; rep <= 9; rep++)
+	for (i = 0; i <= 9; i++)
 	{
-		for(num = 0; num <= 9; num++)
+		for (j = 0; j <= 9; j++)
 		{
-			result = rep * num;
+			sum = i * j;
+			l = sum % 10;
+			k = (sum / 10) % 10;
 
-			if (result / 2 > 4)
+			if (((i == 0) && (j == 0)) || ((i != 0) && (j == 0)))
 			{
-				_putchar(result / 10 + '0');
-				_putchar(result % 10 + '0');
-
-				if(num != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-
+				_putchar(k + '0');
 			}
-
+			else if (sum <= 9)
+			{
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(l + '0');
+			}
 			else
 			{
-				_putchar(result + '0');
-				rest2 = 0;
-				rest2 = num++;
-				rest2 = rest2 / 2;
-
-				if(num != 9 && rest2 < 4)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-					}
-				else
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
+				_putchar(' ');
+				_putchar(k + '0');
+				_putchar(l + '0');
 			}
-
+			if (j < 9)
+				_putchar(',');
 		}
 		_putchar('\n');
 	}
-
 }

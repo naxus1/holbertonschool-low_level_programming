@@ -1,0 +1,32 @@
+#include "holberton.h"
+/**
+* print_times_table - Print table
+* @n: tables to multiply
+* Return: void
+ */
+void print_times_table(int n)
+{
+	int i, j;
+
+	if(n == 0 || n > 15)
+	{
+		return;
+	}
+	else
+		for(i = 0; i <= n; i++)
+		{
+			for(j = 0; j <= n; j++)
+			{
+				if (
+				printf("%d", i * j);
+
+				if(j < n && (i * j) < 10)
+					printf(",   ");
+				else if(j < n && (i * j) >= 10 && (i * j) <= 99)
+					printf(",  ");
+				else if(j < n && (i * j) > 99)
+					printf(", ");
+			}
+			printf("\n");
+		}
+}
