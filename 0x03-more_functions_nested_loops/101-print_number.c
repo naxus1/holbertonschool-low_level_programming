@@ -1,0 +1,36 @@
+#include "holberton.h"
+/**
+ * print_number - function will print numbers no matter their value
+ * @n: represents value given to us in main function
+ */
+
+void print_number(int n)
+{
+	int i = 0, iter = 0;
+	unsigned int value = 0, number = 0;
+
+	i = 1;
+	number = n;
+
+	if (n < 0)
+	{
+		number = -n;
+		value = number;
+		_putchar('-');
+	}
+	else
+		value = number;
+	for (iter = 0; number / 10 > 0; iter++)
+	{
+		number /= 10;
+		i *= 10;
+	}
+	while (iter > 0)
+	{
+		_putchar(value / i + '0');
+		value %= i;
+		i /= 10;
+		--iter;
+	}
+	_putchar(value + '0');
+}

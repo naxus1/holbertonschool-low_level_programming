@@ -1,32 +1,23 @@
 #include <stdio.h>
+/**
+ * main - function will print largest prime factor of given value
+ * Return: function will return zero if compiled properly
+ */
 
 int main(void)
 {
-	int num, a, iterator, breaker;
+	long num = 612852475143, i;
 
-	breaker = 0;
-	iterator = 2
-	 num = 32;
-
-	/* /* /\* /\\* WHILE(BREAKER == 0) *\\\/ *\\/ *\/ */
-	/* /\* /\\* { *\\/ *\/ */
-
-	/* /\* /\\* /\\\* 	IF (NUM % ITERATOR == 0) *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 	{ *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 		A = NUM % ITERATOR; *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 		ITERATOR = 2; *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 		PRINTF("%D", A); *\\\/ *\\/ *\/ */
-
-	/* /\* /\\* /\\\* 		IF(NUM <= 2) *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 		{ *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 			BREAKER = 1; *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 		} *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 	} *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 	ELSE *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 	{ *\\\/ *\\/ *\/ */
-	/* /\* /\\* /\\\* 		ITERATOR ++; *\\\/ *\\/ *\/ */
+	for (i = 2; i < num;)
+	{
+		if (num % i == 0)
+		{
+			num /= i;
+			i = 2;
 		}
+		else
+			i++;
 	}
-
-	return(0);
+	printf("%lu\n", num);
+	return (0);
 }
