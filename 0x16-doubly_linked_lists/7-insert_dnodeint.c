@@ -20,7 +20,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (0);
 	}
 	if (h == NULL)
-	{free(newNode);
+	{free(new_nodo);
 		return (NULL);
 	}
 	if (idx == 0)
