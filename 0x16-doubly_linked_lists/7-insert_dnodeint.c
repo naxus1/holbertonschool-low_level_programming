@@ -1,6 +1,12 @@
 #include "lists.h"
 int lenght_list(dlistint_t *aux);
-
+/**
+ * insert_dnodeint_at_index - add node in the index
+ * @h: Double pointer
+ * @idx: position to add node
+ * @n: number to storage in node
+ * Return: new node
+ */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *aux_nodo, *new_nodo, *ptr_aux;
@@ -19,6 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		new_nodo->next = aux_nodo;
 		new_nodo->prev = NULL;
 		aux_nodo->prev = new_nodo;
+		new_nodo->n = n;
 		return (new_nodo);
 	}
 	while (aux_nodo != NULL)
