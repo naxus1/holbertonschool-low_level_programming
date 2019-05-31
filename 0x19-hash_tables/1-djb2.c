@@ -1,17 +1,17 @@
 #include "hash_tables.h"
 /**
- * hash  - Function hash
- * @str: str to hash
+ * hash_djb2 - hash function based on dan bernstein
+ * @str: string to has and return the hash value
  *
- * Return: hash
-  */
+ * Return: hash value
+ */
 unsigned long int hash_djb2(const unsigned char *str)
 {
-        unsigned long hash = 5381;
-        int c;
+	unsigned long int hash;
+	int c;
 
-        while (c = *str++)
+	hash = 5381;
+	while ((c = *str++))
 		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-
-        return hash;
+	return (hash);
 }
