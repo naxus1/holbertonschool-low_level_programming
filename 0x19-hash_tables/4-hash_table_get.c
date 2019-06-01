@@ -27,6 +27,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 			dict = aux_node->value;
 			return (dict);
 		}
+		aux_node = aux_node->next;
 
 	}
 	return (NULL);
