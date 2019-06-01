@@ -14,7 +14,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	char *dict;
 	const unsigned char *new_key = (const unsigned char *) key;
 
-	if (!ht || !strlen(key) || !ht->size)
+	if (!ht || !strlen(key)
 		return (0);
 
 	index = key_index(new_key, ht->size);
