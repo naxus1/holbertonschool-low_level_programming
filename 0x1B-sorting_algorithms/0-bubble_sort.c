@@ -2,15 +2,16 @@
 #include "sort.h"
 /**
  * bubble_sort - Organizes an array of size size, using the bubble method
- *
  * @array: int array
  * @size: size of the array
  */
 void bubble_sort(int *array, size_t size)
-
 {
 	size_t i = 0, j = 0;
 	int temp;
+
+	if (size <= 1 || array == NULL)
+		return;
 
 	for (j = 0; j < size - 1; j++)
 	{
