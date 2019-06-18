@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void _sort(int *array, int low, int high, size_t size);
+void _sort(int *array, int low, int hight, size_t size);
 int partition(int *array, int left, int right, size_t size);
 
 /**
@@ -32,7 +32,7 @@ void _sort(int *array, int low, int hight, size_t size)
 		value_partition  = partition(array, low, hight, size);
 
 		_sort(array, low, value_partition - 1, size);
-		_sort(array, value_partition + 1, high, size);
+		_sort(array, value_partition + 1, hight, size);
 	}
 }
 
