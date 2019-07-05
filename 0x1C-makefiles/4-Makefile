@@ -2,22 +2,23 @@
 CC = gcc
 # .c files variable
 SRC = main.c holberton.c
-# .o fiiles variable
+# .o files variable
 OBJ = $(SRC:.c=.o)
 # executable variable
 NAME = holberton
 # program to delete files
 RM = rm
-
+# compiler flags variable
+CFLAGS = -Wall -Werror -Wextra -pedantic
+# only compile update source files
 all: $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
-# deletes the emacs temp files & NAME
 clean:
 	$(RM) -f *~ $(NAME)
-# deletes the object files
+
 oclean:
 	$(RM) -f $(OBJ)
-# deletes both
+
 fclean: clean oclean
-# deletes object files and recompiles
+
 re: oclean all
